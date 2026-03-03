@@ -706,6 +706,65 @@ export const footerConfig: FooterConfig = {
 };
 
 // -----------------------------------------------------------------------------
+// Chatbot Config
+// -----------------------------------------------------------------------------
+export interface ChatbotResponse {
+  keywords: string[];
+  response: string;
+}
+
+export interface ChatbotConfig {
+  title: string;
+  subtitle: string;
+  welcomeMessage: string;
+  placeholder: string;
+  responses: ChatbotResponse[];
+  fallbackResponse: string;
+}
+
+export const chatbotConfig: ChatbotConfig = {
+  title: "Arenal Vista Assistant",
+  subtitle: "AI-powered • Ask me anything",
+  welcomeMessage: "¡Hola! I'm your Arenal Vista assistant. Ask me about our rooms, experiences, adventure tours, or how to book your stay. How can I help you today?",
+  placeholder: "Ask about rooms, tours, booking...",
+  responses: [
+    {
+      keywords: ["room", "rooms", "suite", "accommodation", "stay", "bed", "volcano suite", "bungalow", "villa"],
+      response: "We offer three stunning options:\n\n• Volcano Suite – Panoramic volcano views, king bed, Jacuzzi, private terrace (65m²)\n• Jungle Bungalow – Immersed in nature, queen bed, outdoor shower (45m²)\n• Family Villa – 2 bedrooms, kitchen, living room, perfect for groups (95m²)\n\nAll rooms include organic toiletries, climate control, and 24/7 service. Would you like to book or see more details?",
+    },
+    {
+      keywords: ["book", "booking", "reserve", "reservation", "availability", "check in", "check out"],
+      response: "To book your stay, you can:\n\n1. Fill out our contact form on this site – we'll reply within 24 hours\n2. Email us at hello@arenalvista.com\n3. Call or WhatsApp: +506 2479 9000\n\nCheck-in is 3:00 PM, check-out is 11:00 AM. We'd love to host you!",
+    },
+    {
+      keywords: ["pool", "spa", "restaurant", "dining", "experience", "amenities", "infinity"],
+      response: "Our hotel experiences include:\n\n• Infinity Pool – 25m with stunning volcano views\n• Jungle Spa – 8 treatment rooms, volcanic mud, coffee scrubs, local botanicals\n• El Cráter Restaurant – Farm-to-table Costa Rican cuisine with 180° panorama\n\nEverything is designed to blend luxury with the natural beauty of La Fortuna.",
+    },
+    {
+      keywords: ["adventure", "tour", "volcano", "hike", "zip", "zip line", "wildlife", "sloth", "hot spring"],
+      response: "Adventure awaits! We offer:\n\n• Volcano Tours – Guided hikes + natural hot springs\n• Wildlife – Sloths, monkeys, toucans (best at dawn & dusk)\n• Thrill Seekers – Zip-lining, waterfall rappelling, white-water rafting\n\nOur tour desk is open daily 6:00 AM – 8:00 PM. We can arrange everything for you!",
+    },
+    {
+      keywords: ["contact", "email", "phone", "address", "location", "where", "find"],
+      response: "You can reach us at:\n\n📍 Road 142, La Fortuna, Alajuela, Costa Rica\n📞 +506 2479 9000 (WhatsApp available)\n✉️ hello@arenalvista.com\n\nWe typically reply within 24 hours. ¡Pura Vida!",
+    },
+    {
+      keywords: ["price", "cost", "rate", "how much", "pricing"],
+      response: "Rates vary by room type and season. For the most accurate pricing and special offers, please contact us directly at hello@arenalvista.com or use the contact form. We're happy to create a custom package for your stay!",
+    },
+    {
+      keywords: ["hello", "hi", "hey", "hola", "greeting"],
+      response: "¡Hola! Welcome to Arenal Vista. How can I help you plan your Costa Rican getaway?",
+    },
+    {
+      keywords: ["thank", "thanks", "gracias"],
+      response: "You're welcome! We can't wait to welcome you to Arenal Vista. Feel free to ask if you have any other questions. ¡Pura Vida!",
+    },
+  ],
+  fallbackResponse: "That's a great question! For specific details, I'd recommend reaching out to our team directly at hello@arenalvista.com or using the contact form below. They'll be happy to help you plan your perfect stay at Arenal Vista. Is there anything else about our rooms, experiences, or adventures I can tell you about?",
+};
+
+// -----------------------------------------------------------------------------
 // Scroll To Top Config
 // -----------------------------------------------------------------------------
 export interface ScrollToTopConfig {

@@ -38,13 +38,13 @@ export function News() {
 
       <div className="container-custom relative">
         {/* Section Header */}
-        <div className="fade-up flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div className="fade-up flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-12">
           <div>
-            <span className="font-script text-3xl text-gold-400 block mb-2">{newsConfig.scriptText}</span>
+            <span className="font-script text-2xl sm:text-3xl text-gold-400 block mb-2">{newsConfig.scriptText}</span>
             <span className="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">
               {newsConfig.subtitle}
             </span>
-            <h2 className="font-serif text-h1 text-white has-bar">
+            <h2 className="font-serif text-3xl sm:text-h1 text-white has-bar">
               {newsConfig.mainTitle}
             </h2>
           </div>
@@ -134,7 +134,7 @@ export function News() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
               {newsConfig.testimonials.map((t, index) => (
                 <div
                   key={t.name}
@@ -163,15 +163,15 @@ export function News() {
 
         {/* Story Section */}
         {newsConfig.storyTitle && (
-          <div id="story" className="fade-up mt-24 pt-20 border-t border-white/10" style={{ transitionDelay: '0.1s' }}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div id="story" className="fade-up mt-16 sm:mt-24 pt-12 sm:pt-20 border-t border-white/10" style={{ transitionDelay: '0.1s' }}>
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
               {/* Content */}
-              <div className="slide-in-left">
-                <span className="font-script text-3xl text-gold-400 block mb-2">{newsConfig.storyScriptText}</span>
+                <div className="slide-in-left">
+                <span className="font-script text-2xl sm:text-3xl text-gold-400 block mb-2">{newsConfig.storyScriptText}</span>
                 <span className="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">
                   {newsConfig.storySubtitle}
                 </span>
-                <h2 className="font-serif text-h2 text-white mb-6">
+                <h2 className="font-serif text-2xl sm:text-h2 text-white mb-6">
                   {newsConfig.storyTitle}
                 </h2>
                 <div className="space-y-4 text-white/75 leading-relaxed">
@@ -182,10 +182,10 @@ export function News() {
 
                 {/* Timeline Highlights */}
                 {newsConfig.storyTimeline.length > 0 && (
-                  <div className="mt-8 grid grid-cols-3 gap-4">
+                  <div className="mt-6 sm:mt-8 grid grid-cols-3 gap-3 sm:gap-4">
                     {newsConfig.storyTimeline.map((item, index) => (
-                      <div key={index} className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
-                        <div className="font-serif text-2xl text-gold-500 mb-1">{item.value}</div>
+                      <div key={index} className="text-center p-3 sm:p-4 bg-white/5 rounded-lg border border-white/10">
+                        <div className="font-serif text-xl sm:text-2xl text-gold-500 mb-1">{item.value}</div>
                         <div className="text-xs text-white/60">{item.label}</div>
                       </div>
                     ))}

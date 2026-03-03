@@ -9,6 +9,7 @@ import { ContactForm } from './sections/ContactForm';
 import { Footer } from './sections/Footer';
 import { Preloader } from './components/Preloader';
 import { ScrollToTop } from './components/ScrollToTop';
+import { Chatbot } from './components/Chatbot';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +36,7 @@ function App() {
 
         <Footer />
         <ScrollToTop />
+        <Chatbot />
       </div>
     </>
   );

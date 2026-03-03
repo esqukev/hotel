@@ -109,17 +109,17 @@ export function WineryCarousel() {
               ))}
 
               {/* Navigation Arrows */}
-              <div className="absolute bottom-6 left-6 flex gap-3 z-20">
+              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex gap-2 sm:gap-3 z-20">
                 <button
                   onClick={prevSlide}
-                  className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"
                   aria-label="Previous slide"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"
                   aria-label="Next slide"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -127,7 +127,7 @@ export function WineryCarousel() {
               </div>
 
               {/* Slide Indicators */}
-              <div className="absolute bottom-6 right-6 flex gap-2 z-20">
+              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 flex gap-2 z-20">
                 {slides.map((_, index) => (
                   <button
                     key={index}
@@ -144,7 +144,7 @@ export function WineryCarousel() {
             </div>
 
             {/* Content Side */}
-            <div className="lg:bg-white/5 lg:border-y lg:border-r lg:border-white/10 lg:rounded-r-lg p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
+            <div className="bg-wine-900/50 sm:bg-transparent lg:bg-white/5 border-t border-white/10 lg:border-t-0 lg:border-y lg:border-r lg:border-white/10 rounded-b-lg lg:rounded-r-lg p-6 sm:p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
               {slides.map((slide, index) => (
                 <div
                   key={index}
@@ -172,8 +172,8 @@ export function WineryCarousel() {
                   </p>
 
                   {/* Area Stats */}
-                  <div className="flex items-baseline gap-2 mb-6">
-                    <span className="font-serif text-5xl lg:text-6xl text-gold-500">
+                  <div className="flex items-baseline gap-2 mb-4 sm:mb-6">
+                    <span className="font-serif text-4xl sm:text-5xl lg:text-6xl text-gold-500">
                       {slide.area}
                     </span>
                     <span className="text-white/70 text-lg">{slide.unit}</span>

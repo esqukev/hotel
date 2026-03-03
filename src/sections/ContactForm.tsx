@@ -98,22 +98,22 @@ export function ContactForm() {
 
       <div className="container-custom relative">
         {/* Section Header */}
-        <div className="fade-up text-center mb-16">
-          <span className="font-script text-3xl text-gold-400 block mb-2">{contactFormConfig.scriptText}</span>
+        <div className="fade-up text-center mb-10 sm:mb-16">
+          <span className="font-script text-2xl sm:text-3xl text-gold-400 block mb-2">{contactFormConfig.scriptText}</span>
           <span className="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">
             {contactFormConfig.subtitle}
           </span>
-          <h2 className="font-serif text-h1 text-white mb-4">
+          <h2 className="font-serif text-3xl sm:text-h1 text-white mb-4">
             {contactFormConfig.mainTitle}
           </h2>
           {contactFormConfig.introText && (
-            <p className="text-white/70 max-w-2xl mx-auto">
+            <p className="text-white/70 max-w-2xl mx-auto text-sm sm:text-base">
               {contactFormConfig.introText}
             </p>
           )}
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16">
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-6">
             <div className="slide-in-left" style={{ transitionDelay: '0.1s' }}>

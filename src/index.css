@@ -306,8 +306,15 @@
     max-width: 1216px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-custom {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
   }
 
   @media (min-width: 768px) {
@@ -315,5 +322,13 @@
       padding-left: 2rem;
       padding-right: 2rem;
     }
+  }
+
+  /* Safe area for mobile notches */
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  .bottom-safe {
+    bottom: max(1.25rem, env(safe-area-inset-bottom));
   }
 }

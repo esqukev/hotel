@@ -56,21 +56,21 @@ export function WineShowcase() {
 
       <div className="container-custom relative">
         {/* Section Title */}
-        <div className="fade-up text-center mb-16">
-          <span className="font-script text-3xl text-gold-400 block mb-2">{wineShowcaseConfig.scriptText}</span>
+        <div className="fade-up text-center mb-10 sm:mb-16">
+          <span className="font-script text-2xl sm:text-3xl text-gold-400 block mb-2">{wineShowcaseConfig.scriptText}</span>
           <span className="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">
             {wineShowcaseConfig.subtitle}
           </span>
-          <h2 className="font-serif text-h1 text-white">{wineShowcaseConfig.mainTitle}</h2>
+          <h2 className="font-serif text-3xl sm:text-h1 text-white">{wineShowcaseConfig.mainTitle}</h2>
         </div>
 
         {/* Wine Tabs */}
-        <div className="fade-up flex justify-center gap-2 mb-16" style={{ transitionDelay: '0.1s' }}>
+        <div className="fade-up flex flex-wrap justify-center gap-2 mb-10 sm:mb-16" style={{ transitionDelay: '0.1s' }}>
           {wines.map((w, i) => (
             <button
               key={w.id}
               onClick={() => setActiveWine(i)}
-              className={`px-6 py-3 rounded-sm text-sm transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-sm text-xs sm:text-sm transition-all duration-300 ${
                 i === activeWine
                   ? 'bg-gold-500 text-white'
                   : 'bg-white/5 text-white/70 hover:bg-white/10 border border-white/10'
@@ -86,9 +86,9 @@ export function WineShowcase() {
           {/* Left: Wine Info */}
           <div className="slide-in-left lg:col-span-2 order-2 lg:order-1">
             {/* Year + Name */}
-            <div className="mb-8">
-              <div className="flex items-baseline gap-4 mb-3">
-                <span className="font-serif text-6xl lg:text-7xl text-gold-500/30 leading-none">{wine.year}</span>
+            <div className="mb-6 sm:mb-8">
+              <div className="flex flex-wrap items-baseline gap-2 sm:gap-4 mb-3">
+                <span className="font-serif text-4xl sm:text-6xl lg:text-7xl text-gold-500/30 leading-none">{wine.year}</span>
                 <div>
                   <h2 className="font-serif text-h3 text-white leading-tight">{wine.name}</h2>
                   <span className="font-script text-xl text-gold-400">{wine.subtitle}</span>
@@ -102,7 +102,7 @@ export function WineShowcase() {
             <p className="text-white/65 leading-relaxed text-sm mb-8">{wine.tastingNotes}</p>
 
             {/* Tasting Notes */}
-            <div className="flex gap-6 mb-8">
+            <div className="flex flex-wrap gap-4 sm:gap-6 mb-6 sm:mb-8">
               <div>
                 <div className="font-serif text-2xl text-gold-500">{wine.alcohol}</div>
                 <div className="text-[11px] text-white/50 uppercase tracking-wider mt-1">ABV</div>
@@ -135,10 +135,10 @@ export function WineShowcase() {
 
           {/* Center: Wine Bottle */}
           <div className="lg:col-span-1 order-1 lg:order-2 flex justify-center">
-            <div className="relative" style={{ width: '220px', height: '520px' }}>
+            <div className="relative w-[160px] h-[380px] sm:w-[200px] sm:h-[480px] lg:w-[220px] lg:h-[520px]">
               {/* Glow */}
-              <div className={`absolute inset-0 flex items-center justify-center pointer-events-none`}>
-                <div className={`w-48 h-48 ${wine.glowColor} rounded-full blur-3xl transition-colors duration-700`} />
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className={`w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 ${wine.glowColor} rounded-full blur-3xl transition-colors duration-700`} />
               </div>
 
               {/* Bottles */}
@@ -160,7 +160,7 @@ export function WineShowcase() {
               ))}
 
               {/* Switcher Arrows */}
-              <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
+              <div className="absolute -bottom-10 sm:-bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3 sm:gap-4 z-20">
                 <button
                   onClick={prevWine}
                   className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-gold-500 hover:border-gold-500 transition-all duration-300"

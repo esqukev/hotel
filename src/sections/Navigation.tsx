@@ -47,9 +47,11 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-wine-800/95 backdrop-blur-md py-3'
-          : 'bg-transparent py-5'
+        isMobileMenuOpen
+          ? 'bg-wine-900/98 backdrop-blur-lg py-3'
+          : isScrolled
+            ? 'bg-wine-800/95 backdrop-blur-md py-3'
+            : 'bg-transparent py-5'
       }`}
       role="navigation"
       aria-label="Main navigation"
@@ -148,9 +150,9 @@ export function Navigation() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - full overlay, same background as nav, no divisions */}
       <div
-        className={`lg:hidden fixed inset-0 top-[72px] bg-wine-900/98 backdrop-blur-lg transition-all duration-500 ${
+        className={`lg:hidden fixed inset-0 top-0 pt-[72px] bg-wine-900/98 backdrop-blur-lg transition-all duration-500 ${
           isMobileMenuOpen
             ? 'opacity-100 visible'
             : 'opacity-0 invisible pointer-events-none'
@@ -158,7 +160,7 @@ export function Navigation() {
         role="menu"
         aria-hidden={!isMobileMenuOpen}
       >
-        <div className="container-custom py-8 flex flex-col gap-2">
+        <div className="container-custom py-6 flex flex-col gap-0 overflow-y-auto h-full">
           {navLinks.map((link, index) => {
             const IconComponent = iconMap[link.icon];
             return (
@@ -171,7 +173,7 @@ export function Navigation() {
                   <div>
                     <button
                       onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                      className="flex items-center justify-between w-full py-4 text-lg text-white border-b border-white/10"
+                      className="flex items-center justify-between w-full py-4 text-lg text-white hover:text-gold-400 transition-colors"
                       aria-expanded={activeDropdown === link.name}
                       role="menuitem"
                     >
@@ -193,7 +195,7 @@ export function Navigation() {
                         <button
                           key={item.name}
                           onClick={() => scrollToSection(item.href)}
-                          className="block w-full text-left pl-12 py-3 text-white/70 hover:text-gold-400"
+                          className="block w-full text-left pl-12 py-3 text-white/70 hover:text-gold-400 transition-colors"
                           role="menuitem"
                         >
                           {item.name}
@@ -204,7 +206,7 @@ export function Navigation() {
                 ) : (
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="flex items-center gap-3 w-full py-4 text-lg text-white border-b border-white/10 hover:text-gold-400 transition-colors"
+                    className="flex items-center gap-3 w-full py-4 text-lg text-white hover:text-gold-400 transition-colors"
                     role="menuitem"
                   >
                     {IconComponent && <IconComponent className="w-5 h-5 text-gold-500" />}
@@ -218,7 +220,7 @@ export function Navigation() {
           {navigationConfig.ctaButtonText && (
             <button
               onClick={() => scrollToSection('#contact')}
-              className="btn-primary rounded mt-6 text-center"
+              className="btn-primary rounded mt-6 w-full text-center"
               role="menuitem"
             >
               {navigationConfig.ctaButtonText}

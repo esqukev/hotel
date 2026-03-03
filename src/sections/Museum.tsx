@@ -48,12 +48,12 @@ export function Museum() {
           {/* Left Content */}
           <div>
             {/* Section Header */}
-            <div className="slide-in-left mb-10">
-              <span className="font-script text-3xl text-gold-400 block mb-2">{museumConfig.scriptText}</span>
+            <div className="slide-in-left mb-8 sm:mb-10">
+              <span className="font-script text-2xl sm:text-3xl text-gold-400 block mb-2">{museumConfig.scriptText}</span>
               <span className="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">
                 {museumConfig.subtitle}
               </span>
-              <h2 className="font-serif text-h1 text-white has-bar">
+              <h2 className="font-serif text-3xl sm:text-h1 text-white has-bar">
                 {museumConfig.mainTitle}
               </h2>
             </div>
