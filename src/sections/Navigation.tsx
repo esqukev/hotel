@@ -48,7 +48,7 @@ export function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isMobileMenuOpen
-          ? 'bg-wine-900 py-3'
+          ? 'bg-wine-800/95 backdrop-blur-lg py-3'
           : isScrolled
             ? 'bg-wine-800/95 backdrop-blur-md py-3'
             : 'bg-transparent py-5'
@@ -150,9 +150,9 @@ export function Navigation() {
         </button>
       </div>
 
-      {/* Mobile Menu - mismo fondo sólido que Arenal Vista para legibilidad */}
+      {/* Mobile Menu - mismo blur que header, seamless sin divisiones */}
       <div
-        className={`lg:hidden fixed inset-0 top-[72px] bg-wine-900 transition-all duration-500 ${
+        className={`lg:hidden fixed inset-0 top-[72px] bg-wine-800/95 backdrop-blur-lg transition-all duration-500 ${
           isMobileMenuOpen
             ? 'opacity-100 visible'
             : 'opacity-0 invisible pointer-events-none'
@@ -173,7 +173,7 @@ export function Navigation() {
                   <div>
                     <button
                       onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                      className="flex items-center justify-between w-full py-4 text-lg text-white border-b border-white/10"
+                      className="flex items-center justify-between w-full py-4 text-lg text-white hover:text-gold-400 transition-colors"
                       aria-expanded={activeDropdown === link.name}
                       role="menuitem"
                     >
@@ -206,7 +206,7 @@ export function Navigation() {
                 ) : (
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="flex items-center gap-3 w-full py-4 text-lg text-white border-b border-white/10 hover:text-gold-400 transition-colors"
+                    className="flex items-center gap-3 w-full py-4 text-lg text-white hover:text-gold-400 transition-colors"
                     role="menuitem"
                   >
                     {IconComponent && <IconComponent className="w-5 h-5 text-gold-500" />}
