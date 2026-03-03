@@ -48,7 +48,7 @@ export function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isMobileMenuOpen
-          ? 'bg-wine-800/95 backdrop-blur-lg py-3'
+          ? 'bg-wine-800/95 backdrop-blur-md py-3'
           : isScrolled
             ? 'bg-wine-800/95 backdrop-blur-md py-3'
             : 'bg-transparent py-5'
@@ -150,9 +150,9 @@ export function Navigation() {
         </button>
       </div>
 
-      {/* Mobile Menu - mismo blur que header, seamless sin divisiones */}
+      {/* Mobile Menu - exactamente el mismo efecto que header al hacer scroll */}
       <div
-        className={`lg:hidden fixed inset-0 top-[72px] bg-wine-800/95 backdrop-blur-lg transition-all duration-500 ${
+        className={`lg:hidden fixed inset-0 top-[72px] bg-wine-800/95 backdrop-blur-md transition-all duration-500 ${
           isMobileMenuOpen
             ? 'opacity-100 visible'
             : 'opacity-0 invisible pointer-events-none'
